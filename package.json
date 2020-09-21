@@ -1,8 +1,9 @@
 {
   "name": "yallah-react",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "quick and simple react components",
-  "author": "ricefice",
+  "author": "yallastir <yallastir@gmail.com>",
+  "keywords": ["react", "components", "simple", "yallah"],
   "license": "MIT",
   "repository": "ricefice/yallah-react",
   "main": "dist/index.js",
