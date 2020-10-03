@@ -62,11 +62,12 @@ const customPlaceholder = <div>custom placeholder</div>
 
 ## **SectionAlternator**
 
-| props               | type                              | description                                                       |
-|---------------------|-----------------------------------|-------------------------------------------------------------------|
-| children            | JSX[]                             | element(s) to display when not hidden                             |
-| wrapElemStyles      | { [styleKey: string]: string }[]  | css styles to be applied to alternating sections (requires 2 min) |
-| wrapElemType?       | string                            | optional tagname for wrapping element to override default 'div'   |
+| props               | type                              | description                                                                                   |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| children            | JSX[]                             | element(s) to display when not hidden                                                         |
+| wrapElemStyles      | { [styleKey: string]: string }[]  | css styles to be applied to alternating sections (requires 2 min)                             |
+| keyPrefix           | string                            | unique (for each instance of SectionAlternator) prefix used to generate keys for section items|
+| wrapElemType?       | string                            | optional tagname for wrapping element to override default 'div'                               |
 
 ### SectionAlternator Usage
 

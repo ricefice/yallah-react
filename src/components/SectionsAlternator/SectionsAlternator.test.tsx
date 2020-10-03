@@ -9,6 +9,7 @@ describe('SectionsAlternator (unit)', () => {
         expect(() =>
             render(
                 <SectionsAlternator
+                    keyPrefix='test-section-alternator'
                     //@ts-ignore
                     wrapElemStyles={null}>
                     <div>test section 1</div>
@@ -23,6 +24,7 @@ describe('SectionsAlternator (unit)', () => {
         expect(() =>
             render(
                 <SectionsAlternator
+                    keyPrefix='test-section-alternator'
                     wrapElemStyles={[
                         { backgroundColor: 'white' },
                         { backgroundColor: 'black' }
@@ -38,6 +40,7 @@ describe('SectionsAlternator (unit)', () => {
         expect(() =>
             render(
                 <SectionsAlternator
+                    keyPrefix='test-section-alternator'
                     wrapElemStyles={[
                         { backgroundColor: 'white' },
                     ]}
@@ -49,10 +52,29 @@ describe('SectionsAlternator (unit)', () => {
         ).toThrow(new Error('wrapElemStyles prop should contain at least 2 items for alternating effect'))
     })
 
+    it('throws error if no keyPrefix given', () => {
+        spyOn(console, "error")
+        expect(() =>
+            render(
+                <SectionsAlternator
+                    keyPrefix={''}
+                    wrapElemStyles={[
+                        { backgroundColor: 'white' },
+                        { backgroundColor: 'black' },
+                    ]}
+                >
+                    <div>test section 1</div>
+                    <div>test section 2</div>
+                </SectionsAlternator>
+            )
+        ).toThrow(new Error('missing prop: keyPrefix is required'))
+    })
+
     it('renders alternating elements using specified wrapElemStyles', () => {
         spyOn(console, "error")
         render(
             <SectionsAlternator
+                keyPrefix='test-section-alternator'
                 wrapElemStyles={[
                     { backgroundColor: 'white' },
                     { backgroundColor: 'black' },
@@ -79,6 +101,7 @@ describe('SectionsAlternator (unit)', () => {
         spyOn(console, "error")
         render(
             <SectionsAlternator
+                keyPrefix='test-section-alternator'
                 wrapElemStyles={[
                     { backgroundColor: 'white' },
                     { backgroundColor: 'black' },
