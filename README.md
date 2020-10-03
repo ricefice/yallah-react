@@ -12,6 +12,7 @@ npm i --save yallah-react
 
 * [Loader](#loader)
 * [Hider](#hider)
+* [SectionAlternator](#sectionalternator)
 
 ## **Loader**
 
@@ -38,8 +39,6 @@ const customLoadingSpinner = <div>custom loading spinner</div>
 
 ## **Hider**
 
-### props
-
 | props               | type         | description                                                     |
 |---------------------|--------------|-----------------------------------------------------------------|
 | isHidden            | boolean      | hides children and shows loadingElement if defined              |
@@ -59,6 +58,31 @@ const customPlaceholder = <div>custom placeholder</div>
 >
   <div>element that should show when not hidden</div>
 </Hider>
+```
+
+## **SectionAlternator**
+
+| props               | type                              | description                                                       |
+|---------------------|-----------------------------------|-------------------------------------------------------------------|
+| children            | JSX[]                             | element(s) to display when not hidden                             |
+| wrapElemStyles      | { [styleKey: string]: string }[]  | css styles to be applied to alternating sections (requires 2 min) |
+| wrapElemType?       | string                            | optional tagname for wrapping element to override default 'div'   |
+
+### SectionAlternator Usage
+
+```tsx
+import {SectionsAlternator} from 'yallah-react'
+<SectionsAlternator
+    wrapElemStyles={[
+        { backgroundColor: 'white' },
+        { backgroundColor: 'black' },
+    ]}
+>
+    <div>test section 1</div>
+    <div>test section 2</div>
+    <div>test section 3</div>
+    <div>test section 4</div>
+</SectionsAlternator>
 ```
 
 ## License
